@@ -16,7 +16,13 @@ model User {
   updatedAt DateTime @updatedAt
   email String @unique
   password String
+  profile Profile
 }
+
+//the type keyword below is used to define a composite type 
+//allowing you to define a document inside a document. 
+//The benefit of using a composite type over a JSON type is that you
+//get type-safety when querying documents
 
 type Profile {
   firstName String
